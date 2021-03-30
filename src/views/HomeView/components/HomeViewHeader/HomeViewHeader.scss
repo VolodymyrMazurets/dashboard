@@ -1,0 +1,22 @@
+@import "core.scss";
+
+$style: HomeViewHeader;
+
+.#{$style} {
+  padding: 19px 24px 0;
+  &__bread-separator {
+    position: relative;
+    bottom: -4px;
+    fill: $N9;
+  }
+  &__row {
+    margin: 21px 0 23px;
+  }
+  &__col {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    @include text($H16, 500, $N10);
+  }
+}

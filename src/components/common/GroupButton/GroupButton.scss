@@ -1,0 +1,41 @@
+@import 'core.scss';
+
+$style: GroupButton;
+
+.#{$style} {
+  cursor: pointer;
+  @include flex-col(flex-start, center);
+  display: inline-flex;
+  @include hover {
+    .#{$style}__icon {
+      fill: lighten($B3, 5%);
+    }
+    .#{$style}__name {
+      color: $N8;
+    }
+  }
+  &:active {
+    .#{$style}__icon {
+      fill: darken($B3, 5%);
+    }
+    .#{$style}__name {
+      color: $N10;
+    }
+  }
+  &__icon-wrapper {
+    @include size(40px);
+    background-color: var(--B1);
+    border-radius: 2px;
+    margin-bottom: 12px;
+    @include flex(center, center);
+    display: inline-flex;
+  }
+  &__icon {
+    @include svg(26px, $B3);
+  }
+  &__name {
+    @include text($H12, 400, $N9);
+    line-height: 1.2;
+    @include transition(color);
+  }
+}

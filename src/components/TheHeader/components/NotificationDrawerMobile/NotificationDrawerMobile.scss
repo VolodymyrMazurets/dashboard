@@ -1,0 +1,27 @@
+@import "core.scss";
+
+$style: TheHeaderNotificationDrawerMobile;
+
+.#{$style} {
+  @include flex(center, center);
+  &__drawer {
+    height: 100%;
+  }
+  &__header {
+    padding: 16px 20px;
+  }
+  &__content {
+    padding: 14px 20px 15px;
+  }
+  &__link {
+    span {
+      @include flex(center, center);
+    }
+  }
+  &__title {
+    @include text($H14, 400, $N10);
+  }
+  &__notification-item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}

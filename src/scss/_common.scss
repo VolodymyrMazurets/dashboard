@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+  scrollbar-color: var(--scroll-bg) transparent;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+  @include transition(color, background-color);
+
+  
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    width: 4px;
+    background: var(--scroll-bg);
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $N2;
+}
+
+body,
+input,
+button,
+textarea,
+select {
+  font-family: $base-font;
+}
+
+a {
+  display: inline-flex;
+}
+
+ul {
+  list-style: none;
+}
+
+ul,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+button,
+a {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.rc-virtual-list-scrollbar {
+  width: 2px !important;
+}

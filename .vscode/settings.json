@@ -1,0 +1,8 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "host": "https://collabotics-framework-api.azurewebsites.net",
+      "api": "https://collabotics-framework-api.azurewebsites.net/api"
+    }
+  }
+}

@@ -1,0 +1,681 @@
+diff --git a/node_modules/antd/es/select/style/single.less b/node_modules/antd/es/select/style/single.less
+index 0eed6c9..e040657 100644
+--- a/node_modules/antd/es/select/style/single.less
++++ b/node_modules/antd/es/select/style/single.less
+@@ -80,15 +80,15 @@
+       .select-search-input-without-border();
+       width: 100%;
+ 
+-      height: @input-height-base;
++      height: 20px;
+       padding: 0 @input-padding-horizontal-base;
+ 
+       .@{select-prefix-cls}-selection-search-input {
+-        height: @select-height-without-border;
++        height: 18px;
+       }
+ 
+       &::after {
+-        line-height: @select-height-without-border;
++        line-height: 18px;
+       }
+     }
+   }
+diff --git a/node_modules/antd/lib/avatar/style/index.less b/node_modules/antd/lib/avatar/style/index.less
+index dc84db5..09df2c8 100644
+--- a/node_modules/antd/lib/avatar/style/index.less
++++ b/node_modules/antd/lib/avatar/style/index.less
+@@ -4,7 +4,7 @@
+ @avatar-prefix-cls: ~'@{ant-prefix}-avatar';
+ 
+ .@{avatar-prefix-cls} {
+-  .reset-component;
++  .reset-component(@margin: none);
+ 
+   position: relative;
+   display: inline-block;
+diff --git a/node_modules/antd/lib/badge/style/index.less b/node_modules/antd/lib/badge/style/index.less
+index 1c87f84..cefd9cb 100644
+--- a/node_modules/antd/lib/badge/style/index.less
++++ b/node_modules/antd/lib/badge/style/index.less
+@@ -5,27 +5,46 @@
+ @number-prefix-cls: ~'@{ant-prefix}-scroll-number';
+ 
+ .@{badge-prefix-cls} {
+-  .reset-component;
++  .reset-component(@margin: none);
+ 
+   position: relative;
+   display: inline-block;
+   color: unset;
+   line-height: 1;
++  font-size: 10px;
++
++  &._circle {
++    .@{badge-prefix-cls}-count {
++      min-width: 16px;
++      height: 16px;
++      padding: 2px;
++      line-height: 16px;
++    }
++  }
++
++  &._red {
++    .@{badge-prefix-cls}-count {
++      background: @R1;
++    }
++  }
++  
+ 
+   &-count {
+     z-index: @zindex-badge;
+     min-width: @badge-height;
+     height: @badge-height;
+-    padding: 0 6px;
++    padding: 0 3.5px;
+     color: @badge-text-color;
+-    font-weight: @badge-font-weight;
+-    font-size: @badge-font-size;
++    font-weight: 500;
++    font-size: 10px;
+     line-height: @badge-height;
+     white-space: nowrap;
+     text-align: center;
+     background: @badge-color;
+-    border-radius: @badge-height / 2;
+-    box-shadow: 0 0 0 1px @shadow-color-inverse;
++    border-radius: 100px;
++    box-shadow: 0 0 0 1px var(--N0);
++    border: 1px solid var(--N0);
++    box-sizing: content-box;
+     a,
+     a:hover {
+       color: @badge-text-color;
+@@ -42,7 +61,7 @@
+   }
+ 
+   &-multiple-words {
+-    padding: 0 8px;
++    padding: 0 5px;
+   }
+ 
+   &-dot {
+diff --git a/node_modules/antd/lib/breadcrumb/style/index.less b/node_modules/antd/lib/breadcrumb/style/index.less
+index 423c78a..e83ac53 100644
+--- a/node_modules/antd/lib/breadcrumb/style/index.less
++++ b/node_modules/antd/lib/breadcrumb/style/index.less
+@@ -25,6 +25,7 @@
+     color: @breadcrumb-last-item-color;
+     a {
+       color: @breadcrumb-last-item-color;
++      font-weight: 500;
+     }
+   }
+ 
+diff --git a/node_modules/antd/lib/divider/style/index.less b/node_modules/antd/lib/divider/style/index.less
+index e4aa671..37e1f40 100644
+--- a/node_modules/antd/lib/divider/style/index.less
++++ b/node_modules/antd/lib/divider/style/index.less
+@@ -12,8 +12,7 @@
+     position: relative;
+     top: -0.06em;
+     display: inline-block;
+-    height: 0.9em;
+-    margin: 0 8px;
++    height: 100%;
+     vertical-align: middle;
+     border-top: 0;
+     border-left: @border-width-base solid @divider-color;
+@@ -24,7 +23,10 @@
+     clear: both;
+     width: 100%;
+     min-width: 100%; // Fix https://github.com/ant-design/ant-design/issues/10914
+-    margin: 24px 0;
++    margin: 19px 0;
++    &._marginless {
++      margin: 0;
++    }
+   }
+ 
+   &-horizontal&-with-text {
+diff --git a/node_modules/antd/lib/input/style/affix.less b/node_modules/antd/lib/input/style/affix.less
+index 6254c54..8963940 100644
+--- a/node_modules/antd/lib/input/style/affix.less
++++ b/node_modules/antd/lib/input/style/affix.less
+@@ -7,6 +7,12 @@
+   &-affix-wrapper {
+     .input();
+     display: inline-flex;
++    &._filled {
++      svg {
++        transition: fill 0.2s ease;
++        fill: @N8;
++      }
++    }
+ 
+     &-disabled {
+       .@{ant-prefix}-input[disabled] {
+@@ -35,11 +41,13 @@
+   &-suffix {
+     display: flex;
+     flex: none;
++    fill: @input-icon-color;
+     align-items: center;
+   }
+ 
+   &-prefix {
+-    margin-right: @input-affix-margin;
++    margin-left: -3px;
++    margin-right: 8px;
+   }
+ 
+   &-suffix {
+diff --git a/node_modules/antd/lib/input/style/mixin.less b/node_modules/antd/lib/input/style/mixin.less
+index 74da9d3..ce45394 100644
+--- a/node_modules/antd/lib/input/style/mixin.less
++++ b/node_modules/antd/lib/input/style/mixin.less
+@@ -24,7 +24,7 @@
+   }
+   border-right-width: @border-width-base !important;
+   outline: 0;
+-  box-shadow: @input-outline-offset @outline-blur-size @outline-width fade(@color, @outline-fade);
++  box-shadow: 0 0 0 2px @B1;
+ }
+ 
+ // == when hoverd
+diff --git a/node_modules/antd/lib/menu/style/index.less b/node_modules/antd/lib/menu/style/index.less
+index 0568c64..d8e5235 100644
+--- a/node_modules/antd/lib/menu/style/index.less
++++ b/node_modules/antd/lib/menu/style/index.less
+@@ -129,11 +129,11 @@
+   &-inline,
+   &-vertical,
+   &-vertical-left {
+-    border-right: @border-width-base @border-style-base @border-color-split;
++    border-right: @border-width-base @border-style-base var(--N0);
+   }
+ 
+   &-vertical-right {
+-    border-left: @border-width-base @border-style-base @border-color-split;
++    border-left: @border-width-base @border-style-base var(--N0);
+   }
+ 
+   &-vertical&-sub,
+@@ -473,6 +473,14 @@
+ 
+   &-inline-collapsed {
+     width: @menu-collapsed-width;
++    .@{menu-prefix-cls}-selected,
++    .@{menu-prefix-cls}-item-selected {
++      &::after {
++        transform: scaleY(1);
++        opacity: 1;
++        transition: transform 0.15s @ease-in-out, opacity 0.15s @ease-in-out;
++      }
++    }
+     > .@{menu-prefix-cls}-item,
+     > .@{menu-prefix-cls}-item-group
+       > .@{menu-prefix-cls}-item-group-list
+diff --git a/node_modules/antd/lib/menu/style/rtl.less b/node_modules/antd/lib/menu/style/rtl.less
+index 32913df..5dd60fb 100644
+--- a/node_modules/antd/lib/menu/style/rtl.less
++++ b/node_modules/antd/lib/menu/style/rtl.less
+@@ -19,7 +19,7 @@
+   &-vertical {
+     .@{menu-prefix-cls}-rtl& {
+       border-right: none;
+-      border-left: @border-width-base @border-style-base @border-color-split;
++      border-left: @border-width-base @border-style-base var(--N0);
+     }
+   }
+ 
+diff --git a/node_modules/antd/lib/modal/style/modal.less b/node_modules/antd/lib/modal/style/modal.less
+index 47cc391..af72404 100644
+--- a/node_modules/antd/lib/modal/style/modal.less
++++ b/node_modules/antd/lib/modal/style/modal.less
+@@ -41,6 +41,7 @@
+     z-index: @zindex-popup-close;
+     padding: 0;
+     color: @modal-close-color;
++    fill: @modal-close-color;
+     font-weight: 700;
+     line-height: 1;
+     text-decoration: none;
+@@ -50,6 +51,10 @@
+     cursor: pointer;
+     transition: color 0.3s;
+ 
++    svg {
++      transition: fill 0.2s ease;
++    }
++
+     &-x {
+       display: block;
+       width: @modal-header-close-size;
+@@ -60,13 +65,22 @@
+       text-align: center;
+       text-transform: none;
+       text-rendering: auto;
++      display: flex;
++      justify-content: center;
++      align-items: center;
+     }
+ 
+-    &:focus,
+-    &:hover {
++    &:hover,
++    &:hover svg {
+       color: @icon-color-hover;
++      fill: @icon-color-hover;
+       text-decoration: none;
+     }
++    &:active,
++    &:active svg {
++      color: @icon-color-active;
++      fill: @icon-color-active;
++    }
+   }
+ 
+   &-header {
+@@ -79,18 +93,16 @@
+   }
+ 
+   &-body {
+-    padding: @modal-body-padding;
++    padding: 16px @modal-body-padding;
+     font-size: @font-size-base;
+     line-height: @line-height-base;
+     word-wrap: break-word;
+   }
+ 
+   &-footer {
+-    padding: @modal-footer-padding-vertical @modal-footer-padding-horizontal;
++    padding: @modal-footer-padding-vertical 24px 24px;
+     text-align: right;
+     background: @modal-footer-bg;
+-    border-top: @modal-footer-border-width @modal-footer-border-style
+-      @modal-footer-border-color-split;
+     border-radius: 0 0 @border-radius-base @border-radius-base;
+ 
+     button + button {
+diff --git a/node_modules/antd/lib/popover/style/index.less b/node_modules/antd/lib/popover/style/index.less
+index b15e506..c90f7ee 100644
+--- a/node_modules/antd/lib/popover/style/index.less
++++ b/node_modules/antd/lib/popover/style/index.less
+@@ -55,8 +55,7 @@
+     background-color: @popover-bg;
+     background-clip: padding-box;
+     border-radius: @border-radius-base;
+-    box-shadow: @box-shadow-base;
+-    box-shadow: ~'0 0 8px @{shadow-color} \9';
++    box-shadow: 0px 4px 16px 2px rgba(33, 33, 33, 0.13);
+   }
+ 
+   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@@ -68,16 +67,14 @@
+ 
+   &-title {
+     min-width: @popover-min-width;
+-    min-height: @popover-min-height;
+     margin: 0; // reset heading margin
+-    padding: 5px @popover-padding-horizontal 4px;
++    padding: 0;
+     color: @heading-color;
+     font-weight: 500;
+-    border-bottom: 1px solid @border-color-split;
++    border-bottom: 1px solid var(--N3);
+   }
+ 
+   &-inner-content {
+-    padding: @padding-sm @popover-padding-horizontal;
+     color: @popover-color;
+   }
+ 
+@@ -108,7 +105,11 @@
+ 
+   // Arrows
+   // .popover-arrow is outer, .popover-arrow:after is inner
+-
++  &._arrow-none {
++    .@{popover-prefix-cls}-arrow {
++      display: none;
++    }
++  }
+   &-arrow {
+     position: absolute;
+     display: block;
+diff --git a/node_modules/antd/lib/select/style/index.less b/node_modules/antd/lib/select/style/index.less
+index 5bfef19..ba6cd85 100644
+--- a/node_modules/antd/lib/select/style/index.less
++++ b/node_modules/antd/lib/select/style/index.less
+@@ -12,9 +12,9 @@
+ .select-selector() {
+   position: relative;
+   background-color: @select-background;
+-  border: @border-width-base @border-style-base @select-border-color;
+-  border-radius: @border-radius-base;
+-  transition: all 0.3s @ease-in-out;
++  border: none;
++  border-radius: 2px;
++  transition: all 0.2s @ease-in-out;
+ 
+   input {
+     cursor: pointer;
+@@ -117,7 +117,14 @@
+     line-height: 1;
+     text-align: center;
+     pointer-events: none;
+-
++    display: inline-flex;
++    justify-content: center;
++    align-items: center;
++    transform: translateY(1px);
++    svg {
++      flex-shrink: 0;
++      fill: @N8;
++    }
+     .@{iconfont-css-prefix} {
+       vertical-align: top;
+       transition: transform 0.3s;
+@@ -179,13 +186,13 @@
+     box-sizing: border-box;
+     padding: @select-dropdown-edge-child-vertical-padding 0;
+     overflow: hidden;
+-    font-size: @font-size-base;
++    font-size: 12px;
+     // Fix select render lag of long text in chrome
+     // https://github.com/ant-design/ant-design/issues/11456
+     // https://github.com/ant-design/ant-design/issues/11843
+     font-variant: initial;
+     background-color: @select-dropdown-bg;
+-    border-radius: @border-radius-base;
++    border-radius: 2px;
+     outline: none;
+     box-shadow: @box-shadow-base;
+ 
+@@ -219,13 +226,15 @@
+   // ========================= Options =========================
+   .item() {
+     position: relative;
+-    display: block;
+-    min-height: @select-dropdown-height;
+-    padding: @select-dropdown-vertical-padding @control-padding-horizontal;
++    display: flex;
++    justify-content: space-between;
++    align-items: center;
++    min-height: 26px;
++    padding: 3px 8px 3px 12px;
+     color: @text-color;
+     font-weight: normal;
+     font-size: @select-dropdown-font-size;
+-    line-height: @select-dropdown-line-height;
++    line-height: 1.2;
+   }
+ 
+   &-item-empty {
+@@ -235,9 +244,11 @@
+ 
+   &-item {
+     .item();
+-
++    color: @N8;
+     cursor: pointer;
+-    transition: background 0.3s ease;
++    transition-property: color, background-color, background;
++    transition-duration: 0.2s;
++    transition-timing-function: ease;
+ 
+     // =========== Group ============
+     &-group {
+@@ -259,19 +270,19 @@
+ 
+       &-state {
+         flex: none;
++        max-height: 18px;
++        max-width: 18px;
+       }
+ 
+       &-active:not(&-disabled) {
+-        background-color: @select-item-active-bg;
++        background-color: @N1;
+       }
+ 
+       &-selected:not(&-disabled) {
+-        color: @select-item-selected-color;
+-        font-weight: @select-item-selected-font-weight;
+-        background-color: @select-item-selected-bg;
++        color: @N10;
+ 
+         .@{select-prefix-cls}-item-option-state {
+-          color: @primary-color;
++          color: @N10;
+         }
+       }
+ 
+diff --git a/node_modules/antd/lib/select/style/single.less b/node_modules/antd/lib/select/style/single.less
+index 0eed6c9..121dee7 100644
+--- a/node_modules/antd/lib/select/style/single.less
++++ b/node_modules/antd/lib/select/style/single.less
+@@ -3,6 +3,8 @@
+ @selection-item-padding: ceil(@font-size-base * 1.25);
+ 
+ .@{select-prefix-cls}-single {
++  transition: background-color 0.2s ease;
++  border-radius: 2px;
+   // ========================= Selector =========================
+   .@{select-prefix-cls}-selector {
+     display: flex;
+@@ -10,9 +12,9 @@
+     .@{select-prefix-cls}-selection-search {
+       position: absolute;
+       top: 0;
+-      right: @input-padding-horizontal-base;
++      right: 8px;
+       bottom: 0;
+-      left: @input-padding-horizontal-base;
++      left: 8px;
+ 
+       &-input {
+         width: 100%;
+@@ -21,14 +23,18 @@
+ 
+     .@{select-prefix-cls}-selection-item,
+     .@{select-prefix-cls}-selection-placeholder {
++      font-size: 12px;
+       padding: 0;
+-      line-height: @select-height-without-border;
+-      transition: all 0.3s;
++      line-height: 23px;
++      transition: all 0.2s;
++      position: relative;
++      bottom: -1px;
++      font-weight: 400;
+ 
+       // Firefox inline-block position calculation is not same as Chrome & Safari. Patch this:
+       @supports (-moz-appearance: meterbar) {
+         & {
+-          line-height: @select-height-without-border;
++          line-height: 23px;
+         }
+       }
+     }
+@@ -57,15 +63,22 @@
+ 
+   // With arrow should provides `padding-right` to show the arrow
+   &.@{select-prefix-cls}-show-arrow .@{select-prefix-cls}-selection-search {
+-    right: @input-padding-horizontal-base + @font-size-base;
++    right: 8px + @font-size-base;
+   }
+ 
+   &.@{select-prefix-cls}-show-arrow .@{select-prefix-cls}-selection-item,
+   &.@{select-prefix-cls}-show-arrow .@{select-prefix-cls}-selection-placeholder {
+-    padding-right: @selection-item-padding;
++    padding-right: 20px;
+   }
+ 
+   // Opacity selection if open
++  &.@{select-prefix-cls}-open {
++    .ant-select-arrow {
++      transform: rotateX(180deg);
++      transition: transform 0.2s ease;
++    }
++    background-color: @N2;
++  }
+   &.@{select-prefix-cls}-open .@{select-prefix-cls}-selection-item {
+     color: @input-placeholder-color;
+   }
+@@ -80,15 +93,15 @@
+       .select-search-input-without-border();
+       width: 100%;
+ 
+-      height: @input-height-base;
+-      padding: 0 @input-padding-horizontal-base;
++      height: 23px;
++      padding: 0 8px;
+ 
+       .@{select-prefix-cls}-selection-search-input {
+-        height: @select-height-without-border;
++        height: 22px;
+       }
+ 
+       &::after {
+-        line-height: @select-height-without-border;
++        line-height: 23px;
+       }
+     }
+   }
+@@ -108,7 +121,7 @@
+         position: absolute;
+         right: 0;
+         left: 0;
+-        padding: 0 @input-padding-horizontal-base;
++        padding: 0 8px;
+ 
+         &::after {
+           display: none;
+@@ -130,14 +143,14 @@
+         &::after,
+         .@{select-prefix-cls}-selection-item,
+         .@{select-prefix-cls}-selection-placeholder {
+-          line-height: @input-height - 2 * @border-width-base;
++          line-height: 23px;
+         }
+       }
+ 
+       // Not customize
+       &:not(.@{select-prefix-cls}-customize-input) {
+         .@{select-prefix-cls}-selection-search-input {
+-          height: @input-height - 2 * @border-width-base;
++          height: 24px;
+         }
+       }
+     }
+diff --git a/node_modules/antd/lib/style/mixins/reset.less b/node_modules/antd/lib/style/mixins/reset.less
+index 2709bb8..40417ce 100644
+--- a/node_modules/antd/lib/style/mixins/reset.less
++++ b/node_modules/antd/lib/style/mixins/reset.less
+@@ -1,13 +1,13 @@
+ @import '../themes/index';
+ 
+-.reset-component() {
+-  box-sizing: border-box;
+-  margin: 0;
+-  padding: 0;
+-  color: @text-color;
+-  font-size: @font-size-base;
+-  font-variant: @font-variant-base;
+-  line-height: @line-height-base;
+-  list-style: none;
+-  font-feature-settings: @font-feature-settings-base;
++.reset-component(@margin: true, @box-sizing: true, @paddong: true, @color: true, @font-size: true, @font-variant: true, @line-height: true, @list-style: true, @font-feature: true) {
++  & when not (@margin = none) { margin: 0; }
++  & when not (@box-sizing = none) { box-sizing: border-box; }
++  & when not (@paddong = none) { padding: 0; }
++  & when not (@color = none) { color: @text-color; }
++  & when not (@font-size = none) { font-size: @font-size-base; }
++  & when not (@font-variant = none) { font-variant: @font-variant-base;}
++  & when not (@line-height = none) { line-height: @line-height-base;}
++  & when not (@list-style = none) { list-style: none;}
++  & when not (@font-feature = none) { font-feature-settings: @font-feature-settings-base;}  
+ }
+diff --git a/node_modules/antd/lib/style/themes/default.less b/node_modules/antd/lib/style/themes/default.less
+index 8dbe72e..2b263d1 100644
+--- a/node_modules/antd/lib/style/themes/default.less
++++ b/node_modules/antd/lib/style/themes/default.less
+@@ -55,6 +55,7 @@
+ @text-color-inverse: @white;
+ @icon-color: inherit;
+ @icon-color-hover: fade(@black, 75%);
++@icon-color-active: @black;
+ @heading-color: fade(@black, 85%);
+ @text-color-dark: fade(@white, 85%);
+ @text-color-secondary-dark: fade(@white, 65%);
+@@ -62,7 +63,7 @@
+ @font-variant-base: tabular-nums;
+ @font-feature-settings-base: 'tnum';
+ @font-size-base: 14px;
+-@font-size-lg: @font-size-base + 2px;
++@font-size-lg: @font-size-base + 4px;
+ @font-size-sm: 12px;
+ @heading-1-size: ceil(@font-size-base * 2.71);
+ @heading-2-size: ceil(@font-size-base * 2.14);
+diff --git a/node_modules/antd/lib/tabs/style/index.less b/node_modules/antd/lib/tabs/style/index.less
+index 518883f..0a729bd 100644
+--- a/node_modules/antd/lib/tabs/style/index.less
++++ b/node_modules/antd/lib/tabs/style/index.less
+@@ -11,6 +11,8 @@
+ .@{tab-prefix-cls} {
+   .reset-component;
+ 
++  color: var(--N9);
++
+   display: flex;
+   overflow: hidden;
+ 
+@@ -45,6 +47,7 @@
+     }
+ 
+     .@{tab-prefix-cls}-nav-list {
++      padding: 0 24px;
+       position: relative;
+       display: flex;
+       transition: transform @animation-duration-slow;
+@@ -96,6 +99,7 @@
+       &:active,
+       &:focus {
+         color: @tabs-active-color;
++        font-weight: 500;
+       }
+     }
+   }
+diff --git a/node_modules/antd/lib/tabs/style/position.less b/node_modules/antd/lib/tabs/style/position.less
+index d05c767..1ac5ff7 100644
+--- a/node_modules/antd/lib/tabs/style/position.less
++++ b/node_modules/antd/lib/tabs/style/position.less
+@@ -14,7 +14,7 @@
+         position: absolute;
+         right: 0;
+         left: 0;
+-        border-bottom: @border-width-base @border-style-base @border-color-split;
++        border-bottom: @border-width-base @border-style-base var(--N3);
+         content: '';
+       }
+ 
+@@ -163,7 +163,7 @@
+     > .@{tab-prefix-cls}-content-holder,
+     > div > .@{tab-prefix-cls}-content-holder {
+       margin-left: -@border-width-base;
+-      border-left: @border-width-base @border-style-base @border-color-split;
++      border-left: @border-width-base @border-style-base var(--N3);
+ 
+       > .@{tab-prefix-cls}-content > .@{tab-prefix-cls}-tabpane {
+         padding-left: @padding-lg;
+@@ -185,7 +185,7 @@
+     > div > .@{tab-prefix-cls}-content-holder {
+       order: 0;
+       margin-right: -@border-width-base;
+-      border-right: @border-width-base @border-style-base @border-color-split;
++      border-right: @border-width-base @border-style-base var(--N3);
+ 
+       > .@{tab-prefix-cls}-content > .@{tab-prefix-cls}-tabpane {
+         padding-right: @padding-lg;

@@ -1,0 +1,67 @@
+@import 'core.scss';
+
+$style: TheHeaderProfile;
+
+.#{$style} {
+  cursor: pointer;
+  @include flex(flex-start, center);
+  @include hover {
+    .#{$style}__name {
+      color: $N10;
+    }
+  }
+  &__popover {
+    min-width: 226px;
+  }
+  &__preview-avatar {
+    flex-shrink: 0;
+    margin-right: 4px;
+  }
+  &__preview-name {
+    @include text($H14, 400, $N9);
+    margin-right: 4px;
+    @include transition(color);
+  }
+  &__angle-icon {
+    position: relative;
+    bottom: -1px;
+    @include transition(transform);
+  }
+  &__button {
+    &.ant-popover-open {
+      .#{$style}__angle-icon {
+        transform: rotateX(180deg);
+      }
+    }
+  }
+  &__header {
+    padding: 16px 24px;
+  }
+  &__content {
+    padding: 14px 22px 15px;
+  }
+  &__avatar {
+    margin-right: 16px;
+  }
+  &__name-wrapper {
+    @include flex-col(center);
+  }
+  &__name {
+    @include text($H12, 500, $N10);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  &__email {
+    @include text($H10, 500, $N8);
+    line-height: 1.2;
+  }
+  &__footer {
+    padding: 15px 24px;
+  }
+  &__item {
+    display: flex;
+    &:not(:last-of-type) {
+      margin-bottom: 12px;
+    }
+  }
+}

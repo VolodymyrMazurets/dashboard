@@ -1,0 +1,38 @@
+@import 'core.scss';
+
+$style: Link;
+
+.#{$style} {
+  @include flex(flex-start, center);
+  display: inline-flex;
+  line-height: 1.2;
+  @include hover {
+    .#{$style}__text {
+      color: $N8;
+    }
+    .#{$style}__icon {
+      fill: $N7;
+    }
+  }
+  &:active {
+    .#{$style}__text {
+      color: $N10;
+    }
+    .#{$style}__icon {
+      fill: $N9;
+    }
+  }
+  &__icon {
+    fill:$N8;
+    margin-right: 6px;
+    position: relative;
+    top: -1px;
+    @include transition(fill);
+  }
+  &__text {
+    display: inline-flex;
+    @include text($H12, 400, $N9);
+    @include transition(color);
+    line-height: 1.2;
+  }
+}

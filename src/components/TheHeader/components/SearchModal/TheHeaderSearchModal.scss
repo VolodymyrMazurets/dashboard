@@ -1,0 +1,61 @@
+@import "core.scss";
+
+$style: TheHeaderSearchModal;
+
+.#{$style} {
+  & &__search {
+    padding: 0;
+    background-color: var(--modal-bg);
+    & .ant-input {
+      background-color: var(--modal-bg);
+    }
+  }
+  & &__divider {
+    background-color: $N3;
+    height: 1px;
+  }
+  &__search-text {
+    @include text($H10, 500, $N9);
+  }
+  & &__subtle {
+    span {
+      @include text($H12, 500, $N8);
+    }
+  }
+  &__list {
+    margin: 0 -24px;
+  }
+  &__list-item {
+    padding: 5px 24px;
+  }
+  &__icon {
+    @include svg(16px, $N8);
+    margin-right: 10px;
+    &._img {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+    }
+  }
+  &__item-name {
+    @include text($H12, 400, $N8);
+  }
+  & .ant-input {
+    color: $N9;
+  }
+  &__sublist {
+    margin: 10px -24px 0;
+
+  }
+  &__sublist-item {
+    @include flex(flex-start, center);
+    cursor: pointer;
+    padding: 6px 50px;
+    &:hover {
+      background-color: $N1;
+    }
+  }
+  &__sublist-name {
+    @include text($H12, 400, $N8);
+  }
+}

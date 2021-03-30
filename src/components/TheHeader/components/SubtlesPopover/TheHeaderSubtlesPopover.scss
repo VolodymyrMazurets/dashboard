@@ -1,0 +1,14 @@
+@import "core.scss";
+
+$style: TheHeaderSubtlesPopover;
+
+.#{$style} {
+  min-width: 200px;
+  &__inner {
+    padding: 19px 24px 20px;
+    @include flex(flex-start, flex-start, column);
+  }
+  &__subtle:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}

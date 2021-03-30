@@ -1,0 +1,8 @@
+@import 'core.scss';
+
+$style: App;
+
+.#{$style} {
+  min-height: 100vh;
+  @include flex-col;
+}

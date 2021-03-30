@@ -1,0 +1,34 @@
+@import 'core.scss';
+
+$style: AvatarBadge;
+
+.#{$style} {
+  @include flex(flex-start, center);
+  cursor: pointer;
+  &:disabled {
+    cursor: default;
+  }
+  &._vertical {
+    flex-direction: column;
+    .#{$style}__image-wrapper {
+      margin-right: 0;
+      margin-bottom: 11px;
+      @include size(32px);
+    }
+    .#{$style}__image {
+      @include size(32px);
+    }
+    .#{$style}__name {
+      font-size: $H12;
+    }
+  }
+  &__image {
+    flex-shrink: 0;
+    margin-right: 8px;
+    display: inline-flex;
+  }
+  &__name {
+    @include text($H16, 400, $N10);
+    white-space: nowrap;
+  }
+}

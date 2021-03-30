@@ -1,0 +1,36 @@
+@import 'core.scss';
+
+$style: Subtle;
+
+.#{$style} {
+  @include flex(flex-start, center);
+  display: inline-flex;
+  white-space: nowrap;
+  cursor: pointer;
+  @include hover {
+    .#{$style}__icon {
+      fill: lighten($B3, 10%);
+    }
+    .#{$style}__text {
+      color: lighten($B3, 10%);
+    }
+  }
+  &:active {
+    .#{$style}__icon {
+      fill: darken($B3, 10%);
+    }
+    .#{$style}__text {
+      color: darken($B3, 10%);
+    }
+  }
+  &__icon {
+    fill: $B3;
+    @include transition(fill);
+    margin-right: 6px;
+  }
+  &__text {
+    @include text($H12, 500, $B3);
+    line-height: 1;
+    @include transition(color);
+  }
+}

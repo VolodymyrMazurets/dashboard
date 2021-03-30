@@ -1,0 +1,62 @@
+/* ---COLORS--- */
+
+// Neutrals
+$N0: var(--N0);
+$N1: var(--N1);
+$N2: var(--N2);
+$N3: var(--N3);
+$N4: var(--N4);
+$N5: #bdbdbd;
+$N6: #9e9e9e;
+$N7: #757575;
+$N8: #616161;
+$N9: var(--N9);
+$N10: var(--N10);
+$N00: #000;
+
+// Blue
+$B1: #e5f2fc;
+$B2: #9bc9f5;
+$B3: #4396ec;
+$B4: #2a66ba;
+
+// Red
+$R1: #d4483e;
+
+// Orange
+$O1: #e78131;
+
+// Green
+$G1: #67ac5b;
+
+/* ---FONT SIZE--- */
+@function calcRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+$H18: calcRem(18px);
+$H16: calcRem(16px);
+$H14: calcRem(14px);
+$H12: calcRem(12px);
+$H11: calcRem(11px);
+$H10: calcRem(10px);
+
+/* Screens */
+$screen-iphone-5: 320px;
+$screen-iphone-6: 375px;
+$screen-iphone-plus: 414px;
+$screen-tablet-small: 600px;
+$screen-tablet: 768px;
+$screen-tablet-large: 860px;
+$screen-netbook: 960px;
+$screen-desktop: 1024px;
+$screen-desktop-large: 1280px;
+$screen-hd: 1366px;
+$screen-fullhd: 1440px;
+$screen-retina: 1660px;
+
+// FONTS
+$base-font: 'SF Pro', -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+  'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+  'Droid Sans', 'Helvetica Neue', sans-serif;

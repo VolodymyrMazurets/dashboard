@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon render Icon "action-horizontal" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">ActionHorizontal.svg</svg>"`;
+
+exports[`Icon render Icon "angle-down" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Angle-down.svg</svg>"`;
+
+exports[`Icon render Icon "angle-right" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">AngleRight.svg</svg>"`;
+
+exports[`Icon render Icon "app" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Applications.svg</svg>"`;
+
+exports[`Icon render Icon "arrow-right" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Small-icon-right.svg</svg>"`;
+
+exports[`Icon render Icon "check" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Check.svg</svg>"`;
+
+exports[`Icon render Icon "clock" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Clock.svg</svg>"`;
+
+exports[`Icon render Icon "close" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Cross.svg</svg>"`;
+
+exports[`Icon render Icon "comments" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Comments.svg</svg>"`;
+
+exports[`Icon render Icon "cross" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Cross.svg</svg>"`;
+
+exports[`Icon render Icon "expand-left" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Expand-Left.svg</svg>"`;
+
+exports[`Icon render Icon "eye" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Eye.svg</svg>"`;
+
+exports[`Icon render Icon "help" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Help.svg</svg>"`;
+
+exports[`Icon render Icon "help-filled" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Help-filled.svg</svg>"`;
+
+exports[`Icon render Icon "info" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Info in circle.svg</svg>"`;
+
+exports[`Icon render Icon "lock" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Lock.svg</svg>"`;
+
+exports[`Icon render Icon "menu-mobile" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">MenuMobile.svg</svg>"`;
+
+exports[`Icon render Icon "moon" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Moon.svg</svg>"`;
+
+exports[`Icon render Icon "notebook" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Notebook.svg</svg>"`;
+
+exports[`Icon render Icon "notifications" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Notifications.svg</svg>"`;
+
+exports[`Icon render Icon "notifications-filled" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Notifications-filled.svg</svg>"`;
+
+exports[`Icon render Icon "notifications-filled-active" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Notifications-filled-active.svg</svg>"`;
+
+exports[`Icon render Icon "preferences" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Preferences.svg</svg>"`;
+
+exports[`Icon render Icon "question" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Question.svg</svg>"`;
+
+exports[`Icon render Icon "reload" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Reload.svg</svg>"`;
+
+exports[`Icon render Icon "search" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Search.svg</svg>"`;
+
+exports[`Icon render Icon "settings" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Settings.svg</svg>"`;
+
+exports[`Icon render Icon "sign-out" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">Sign-out.svg</svg>"`;
+
+exports[`Icon render Icon "success-circle" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">SuccessCircle.svg</svg>"`;
+
+exports[`Icon render Icon "success-circle-pure" 1`] = `"<svg data-testid=\\"icon-test\\" style=\\"width:24px;height:24px\\">SuccessCirclePure.svg</svg>"`;

@@ -1,0 +1,30 @@
+[
+  {
+    "Id": "08878af5-da70-4ee6-8695-5aa2a5a7c826",
+    "Name": "Process Studio",
+    "Contexts": null,
+    "MenuItems": null,
+    "Url": null
+  },
+  {
+    "Id": "2fa23d56-f958-462f-8761-b483bbd8e2d2",
+    "Name": "Automation Studio",
+    "Contexts": null,
+    "MenuItems": null,
+    "Url": null
+  },
+  {
+    "Id": "d6435ad2-8b60-46c5-9c1a-49e32a292bde",
+    "Name": "Workflow Studio",
+    "Contexts": null,
+    "MenuItems": null,
+    "Url": null
+  },
+  {
+    "Id": "047fccc6-df98-4ab6-9359-eba6bbb67eec",
+    "Name": "Management Portal",
+    "Contexts": null,
+    "MenuItems": null,
+    "Url": null
+  }
+]

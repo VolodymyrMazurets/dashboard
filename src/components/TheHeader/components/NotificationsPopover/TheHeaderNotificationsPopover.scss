@@ -1,0 +1,39 @@
+@import 'core.scss';
+
+$style: TheHeaderNotificationsPopover;
+
+.#{$style} {
+  
+  min-width: 400px;
+  &__header {
+    padding: 16px 24px;
+  }
+  &__header-title {
+    @include text($H14, 500, $N10);
+  }
+  &__content {
+    text-align: center;
+    line-height: 150%;
+    padding: 24px 12px 19px;
+    @include text($H12, 400, $N9);
+  }
+  &__link {
+    padding: 0;
+    &.ant-btn {
+      padding: 0;
+    }
+    &._with-icon {
+      @include flex(flex-start, center);
+    }
+  }
+  &__icon {
+    margin-left: 4px;
+  }
+  &__inner {
+    max-height: 250px;
+    overflow: auto;
+  }
+  &__notification-item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}

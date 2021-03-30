@@ -1,0 +1,133 @@
+@import "core.scss";
+
+$style: TheHeader;
+
+.#{$style} {
+  background-color: $N0;
+  height: 48px;
+  padding: 0 16px;
+  @include flex;
+  position: relative;
+  @include media {
+    padding: 0 19px 0 24px;
+  }
+  &__logo-wrapper {
+    margin-right: 8px;
+    @include media {
+      margin-right: 16px;
+    }
+  }
+  & &__apps {
+    display: none;
+    @include media {
+      display: inline-flex;
+    }
+  }
+  & &__mobile-apps {
+    @include media {
+      display: none;
+    }
+  }
+  &__main {
+    padding: 0;
+    margin-right: 24px;
+    flex-grow: 1;
+    @include flex(flex-start, center);
+    max-width: 800px;
+    overflow-x: auto;
+  }
+  &__application-name {
+    margin-left: 8px;
+    @include text($H14, 400, $N10);
+    white-space: nowrap;
+    @include media {
+      margin-left: 16px;
+    }
+  }
+  & &__divider {
+    display: none;
+    @include media {
+      display: block;
+    }
+  }
+  &__app-badge {
+    margin-right: 24px;
+  }
+  &__mobile-info {
+    @include flex(flex-end, center);
+
+    @include media {
+      display: none;
+    }
+  }
+  &__info {
+    flex-grow: 1;
+    padding: 8px 0;
+    display: none;
+    @include media {
+      @include flex(flex-end, center);
+    }
+  }
+  &__info-divider {
+    margin: 0 20px;
+  }
+  & &__search {
+    flex-basis: 270px;
+    flex-shrink: 1;
+    display: none;
+    @include media {
+      display: flex;
+      position: relative;
+      top: 3px;
+    }
+  }
+  &__help-btn {
+    margin-right: 14px;
+  }
+  &__notification-btn {
+    margin-right: 14px;
+    &._last {
+      margin-right: 0;
+    }
+    @include media {
+      margin-right: 24px;
+      &.ant-popover-open,
+      &.ant-popover-open:hover {
+        svg {
+          fill: $B3;
+        }
+      }
+    }
+  }
+  &__app-popover {
+    margin-right: 16px;
+  }
+  &__notification-badge {
+    margin-right: 17px;
+  }
+  &__action-btn {
+    margin-right: 14px;
+  }
+  &__subtle {
+    margin-right: 24px;
+  }
+  & &__select {
+    margin-right: 8px;
+    color: var(--N10);
+  }
+  &__loader {
+    left: 0;
+    right: 0;
+    position: absolute;
+    bottom: -3px;
+  }
+  &__desktop-dropdowns {
+    display: none;
+    @include media {
+      display: flex;
+    }
+  }
+  &__mobile-search-btn {
+    margin-right: 10px;
+  }
+}

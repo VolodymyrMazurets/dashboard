@@ -1,0 +1,156 @@
+@import "core.scss";
+
+$style: TheMenuMobile;
+$active: ant-menu-item-selected;
+
+.#{$style} {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  border-top: 1px solid $N3;
+  .#{$active} {
+    .#{$style}__name {
+      font-weight: 500;
+      color: $B3;
+    }
+    .#{$style}__icon,
+    .#{$style}__icon-default {
+      fill: $B3;
+    }
+  }
+  &__children-list {
+    border-top: 1px solid $N3;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    padding: 10px 16px;
+    @include flex(flex-start, center);
+  }
+  &__children-item {
+    margin-right: 16px;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    color: var(--N9);
+    cursor: pointer;
+    &._active {
+      color: $B3;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__list {
+    @include flex(stretch, stretch);
+    height: 100%;
+  }
+  &__icon-default {
+    fill: $N8;
+    @include transition(fill);
+  }
+  &__item {
+    flex: 1;
+    @include flex(center, center, column);
+    border-top: 2px solid transparent;
+    padding: 5px;
+    height: 100%;
+    @include transition(background-color, border-color);
+    overflow: hidden;
+    cursor: pointer;
+    &:hover,
+    &:active {
+      background-color: var(--B1);
+      border-color: $B3;
+      .#{$style}__tab-name {
+        color: $B3;
+      }
+      .#{$style}__icon {
+        background-color: $B3;
+      }
+    }
+    &._active {
+      background-color: var(--B1);
+      border-color: $B3;
+      .#{$style}__tab-name {
+        color: $B3;
+      }
+      .#{$style}__icon {
+        background-color: $B3;
+      }
+    }
+  }
+  &__tab-name {
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    color: var(--N9);
+  }
+  & &__icon {
+    background-color: transparent;
+  }
+  &__expand {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    padding: 10px 16px;
+    border-top: 1px solid $N3;
+  }
+  &__icon-wrapper {
+    display: inline-block;
+    width: 27px;
+  }
+  &__icon-default {
+    fill: $N8;
+    @include transition(fill);
+  }
+  &__icon {
+    fill: $N8;
+    @include transition(fill);
+  }
+  &__name {
+    position: relative;
+    bottom: -1px;
+    @include text($H14, 400, $N9);
+    @include transition(color);
+  }
+  .ant-menu-submenu-title {
+    span:nth-child(2) {
+      margin-left: 12px;
+      position: relative;
+      bottom: -1px;
+      @include text($H14, 400, $N9);
+      @include transition(color);
+    }
+  }
+  .ant-menu-inline-collapsed {
+    .ant-menu-item {
+      padding-left: 24px !important;
+    }
+    .ant-menu-submenu-title {
+      padding-left: 24px !important;
+    }
+    .#{$style}__name {
+      max-width: 0;
+      opacity: 0;
+    }
+    .ant-menu-submenu-title {
+      span:nth-child(2) {
+        max-width: 0;
+        opacity: 0;
+      }
+    }
+  }
+  &__item-menu {
+    &.ant-menu-submenu-selected {
+      background-color: var(--B1);
+    }
+  }
+}
+
+.ant-menu-submenu-popup > .ant-menu {
+  background-color: var(--popover-bg) !important;
+}

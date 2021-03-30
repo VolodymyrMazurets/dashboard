@@ -1,0 +1,35 @@
+@import 'core.scss';
+
+$style: IconButton;
+
+.#{$style} {
+  cursor: pointer;
+  background-color: $N0;
+  @include transition(background-color);
+  display: inline-flex;
+  align-items: center;
+  @include hover {
+    .#{$style}__icon {
+      fill: $B2;
+    }
+    .#{$style}__label {
+      color: $B2;
+    }
+  }
+  &._active,
+  &.ant-popover-open,
+  &:active {
+    .#{$style}__icon {
+      fill: $B3;
+    }
+  }
+  &__icon {
+    @include svg(26px, $N8);
+  }
+  &__label {
+    @include text($H12, 400, $N8);
+    display: inline-block;
+    margin-left: 8px;
+    @include transition(color);
+  }
+}

@@ -1,0 +1,81 @@
+@import "core.scss";
+
+$style: TheHeaderProfileDrawerMobile;
+
+.#{$style} {
+  @include flex(center, center);
+  &__drawer {
+    height: 100%;
+    @include flex-col(space-between, stretch);
+  }
+  &__preview-name {
+    @include text($H14, 400, $N9);
+    margin-right: 4px;
+    @include transition(color);
+  }
+  &__header {
+    padding: 16px 20px;
+  }
+  &__content {
+    padding: 14px 20px 15px;
+  }
+  &__avatar {
+    margin-right: 16px;
+  }
+  &__name-wrapper {
+    @include flex-col(center);
+  }
+  &__name {
+    @include text($H12, 500, $N10);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  &__email {
+    @include text($H10, 500, $N8);
+    line-height: 1.2;
+  }
+  &__block {
+    padding: 15px 24px;
+  }
+  &__item {
+    display: flex;
+    &:not(:last-of-type) {
+      margin-bottom: 12px;
+    }
+  }
+  &__dropdowns {
+    padding: 18px 20px 22px;
+    @include flex-col();
+  }
+  &__select {
+    margin-bottom: 16px;
+    &._last {
+      margin-bottom: 18px;
+    }
+  }
+  &__status {
+    @include flex-row(flex-start, center);
+    padding: 8px;
+    background: rgba(212, 72, 62, 0.08);
+    border-radius: 2px;
+  }
+  &__notification-badge {
+    margin-right: 10px;
+  }
+  &__status-text {
+    @include text($H12, 400, $N9);
+  }
+  &__footer {
+    padding: 0 0 24px;
+  }
+  &__footer-row {
+    padding: 24px 20px 10px;
+  }
+  &__footer-btn {
+    margin-right: 24px;
+  }
+  &__footer-text {
+    color: var(--N9);
+    margin-right: 4px;
+  }
+}

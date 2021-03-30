@@ -1,0 +1,33 @@
+@import 'core.scss';
+
+$style: TheHeaderHelpPopover;
+
+.#{$style} {
+  
+  min-width: 200px;
+  &__header {
+    padding: 16px 24px;
+  }
+  &__header-title {
+    @include text($H14, 500, $N10);
+  }
+  &__content {
+    text-align: center;
+    line-height: 150%;
+    padding: 24px 24px 19px;
+    @include text($H12, 400, $N9);
+  }
+  &__link {
+    margin: 0 5px;
+  }
+  &__email {
+    @include text($H12, 600, $N10);
+    @include transition(color);
+    @include hover {
+      color: $N9;
+    }
+    &:active {
+      color: $N10;
+    }
+  }
+}

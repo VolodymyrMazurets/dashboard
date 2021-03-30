@@ -1,0 +1,41 @@
+@import 'core.scss';
+
+$style: TheHeaderAppDrawerMobile;
+
+.#{$style} {
+  @include flex(center, center);
+  &__suites-list {
+    list-style: none;
+  }
+  &__suite {
+    padding: 19px 0 20px;
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $N3;
+    }
+  }
+  &__applications {
+    margin-top: 19px;
+    list-style: none;
+  }
+  &__item {
+    line-height: 1;
+    &:not(:last-of-type) {
+      margin-bottom: 14px;
+    }
+  }
+  &__item-link {
+    @include text($H14, 400, $N9);
+    @include transition(color, font-weight);
+    line-height: 1;
+    &:hover {
+      color: $N7;
+    }
+    &:active {
+      color: $N10;
+    }
+    &._active {
+      color: $N10;
+      font-weight: 500;
+    }
+  }
+}

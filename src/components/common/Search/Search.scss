@@ -1,0 +1,9 @@
+@import 'core.scss';
+
+$style: Search;
+
+.#{$style} {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,7 @@
+[
+  { "Text": "Nbcu.Applications.Sap.Core" },
+  { "Text": "Nbcu.Applications.Sap.Common" },
+  { "Text": "Nbcu.Applications.Sap.Applications" },
+  { "Text": "Nbcu.Processes.JournalEntryReverser" },
+  { "Text": "Nbcu.Processes.SapDocumentDownloader" }
+]

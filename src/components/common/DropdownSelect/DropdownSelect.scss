@@ -1,0 +1,20 @@
+@import 'core.scss';
+
+$style: DropdownSelect;
+
+.#{$style} {
+  flex-shrink: 0;
+  &__header {
+    padding: 8px 12px 9px;
+    @include text($H10, 500, $N9);
+    text-transform: capitalize;
+  }
+
+  &__dropdown {
+    min-width: 220px;
+    padding: 0 !important;
+    .rc-virtual-list-holder-inner {
+      padding-top: 6px !important;
+    }
+  }
+}

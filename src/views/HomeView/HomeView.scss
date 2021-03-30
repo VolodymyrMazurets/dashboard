@@ -1,0 +1,30 @@
+@import 'core.scss';
+
+$style: HomeView;
+
+.#{$style} {
+  flex-grow: 1;
+  @include flex();
+  background: $N2;
+  padding-top: 16px;
+  &__menu {
+    margin-right: 14px;
+    display: none;
+    @include media {
+      display: initial;
+    }
+  }
+  &__menu-mobile {
+    @include media {
+      display: none;
+    }
+  }
+  &__wrapper {
+    flex-grow: 1;
+    background-color: $N0;
+    border-top-left-radius: 2px;
+  }
+  & &__tabs {
+    margin-top: -12px;
+  }
+}

@@ -1,0 +1,85 @@
+@contentType = application/json
+
+# @name Accounts
+GET {{api}}/accounts/
+Content-Type: {{contentType}}
+
+### 
+
+# @name ApplicationSuites
+GET {{api}}/application-suites/
+Content-Type: {{contentType}}
+
+### 
+
+@appSuiteId = {{ApplicationSuites.response.body.0.Id}}
+
+# @name Applications
+GET {{api}}/application-suites/{{appSuiteId}}/applications
+Content-Type: {{contentType}}
+
+### 
+
+@appId = {{Applications.response.body.0.Id}}
+
+# @name ApplicationContexts
+GET {{api}}/application-suites/{{appSuiteId}}/applications/{{appId}}/application-contexts
+Content-Type: {{contentType}}
+
+###
+
+# @name Panels
+@panelsId = 00000000-0000-0000-0000-000000000000
+GET {{api}}/panels/{{panelsId}}
+Content-Type: {{contentType}}
+
+###
+
+# @name BackgroundTasksCounts
+GET {{api}}/background-tasks/count
+Content-Type: {{contentType}}
+
+###
+
+# @name BackgroundTasks
+GET {{api}}/background-tasks/
+Content-Type: {{contentType}}
+
+###
+@taskId = {{BackgroundTasks.response.body.0.Id}}
+
+# @name BackgroundTasksDismiss
+POST {{api}}/background-tasks/{{taskId}}/dismiss
+Content-Type: {{contentType}}
+
+###
+
+# @name NotificationsCount
+GET {{api}}/notifications/count
+Content-Type: {{contentType}}
+
+###
+
+# @name Notifications
+GET {{api}}/notifications
+Content-Type: {{contentType}}
+
+###
+
+# @name NotificationDismiss
+@notificationId = {{Notifications.response.body.0.Id}}
+POST {{api}}/notifications/{{notificationId}}/dismiss
+Content-Type: {{contentType}}
+
+###
+
+# @name NotificationDismissAll
+POST {{api}}/notifications/dismiss-all
+Content-Type: {{contentType}}
+
+###
+
+# @name SearchesHitory
+get {{api}}/users/1/search-history
+Content-Type: {{contentType}}
+
